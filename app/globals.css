@@ -130,3 +130,20 @@
     @apply transition-all ease-in-out duration-300 cursor-pointer
   }
 }
+
+/*   Font Setup  */
+:root{
+  --font-raleway: 'Raleway', sans-serif;
+}
+
+body{
+  font-family: var(--font-raleway);
+}
+
+/* :root{
+  --font-akaya: 'Akaya', sans-serif;
+}
+
+body{
+  font-family: var(--font-akaya);
+} */
