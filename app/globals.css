@@ -132,13 +132,13 @@
 }
 
 /*   Font Setup  */
-:root{
+/* :root{
   --font-raleway: 'Raleway', sans-serif;
 }
 
 body{
   font-family: var(--font-raleway);
-}
+} */
 
 /* :root{
   --font-akaya: 'Akaya', sans-serif;
