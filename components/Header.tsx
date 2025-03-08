@@ -6,7 +6,7 @@ import MobileMenu from './MobileMenu'
 import SearchBar from './SearchBar'
 import CartIcon from './CartIcon'
 import { currentUser } from '@clerk/nextjs/server'
-import { ClerkLoaded, SignedIn, SignInButton, UserButton, SignedOut, SignUpButton } from '@clerk/nextjs'
+import { ClerkLoaded, SignedIn, SignInButton, UserButton} from '@clerk/nextjs'
 import Link from 'next/link'
 import { ListOrdered} from 'lucide-react'
 
@@ -31,13 +31,13 @@ const Header = async () => {
               </Link>
               <UserButton />
             </SignedIn>
-            {/* {!user && (<SignInButton mode='modal'>
+            {!user && (<SignInButton mode='modal'>
               <button className='text-sm font-semibold hover:text-black hoverEffect'>Sign in</button>
-            </SignInButton>)} */}
-             <SignedOut>
-              <SignInButton mode = 'modal'/>
+            </SignInButton>)}
+             {/* <SignedOut> */}
+              {/* <SignInButton mode = 'modal'/>s */}
               {/* <SignUpButton /> */}
-            </SignedOut>
+            {/* </SignedOut> */}
           </ClerkLoaded>
         </div>
       </Container>

@@ -24,3 +24,11 @@ export const headerData = [
         href: "/gift"
       },
   ]
+
+  export const productData= [
+    {title: "T-Shirt"},
+    {title: "Jacket"},
+    {title: "Pants"},
+    {title: "Hoodie"},
+    {title: "Shorts"},  
+  ]
