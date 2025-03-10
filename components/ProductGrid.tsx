@@ -43,7 +43,7 @@ const ProductGrid = () => {
           </div>
         </div>
       ) : products.length ? (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full mt-6">
           {products.map((product: Product) => (
             <div key={product._id}>
               <ProductCard product={product} />
