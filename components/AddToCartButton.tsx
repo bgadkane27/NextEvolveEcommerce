@@ -10,9 +10,12 @@ interface Props{
 }
 
 const AddToCartButton = ({product, className}:Props) => {
+  const isOutofStock = product?.stock === 0;  
   return (
     <div className='flex items-center'>
-        <Button variant='outline' className={cn('w-full hover:cursor-pointer',className)}><ShoppingCart />Add to Cart</Button>
+        <Button variant={'outline'} 
+        disabled={isOutofStock}
+        className={cn('hover:cursor-pointer rounded',className)}><ShoppingCart className='w-5 h-5'/></Button>
     </div>
   )
 }

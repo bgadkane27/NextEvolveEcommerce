@@ -18,7 +18,7 @@ const NoProduct = ({ selectedTab, className }: { selectedTab: string; className?
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className='text-gray-600'>
-                We&apos;re sorry, there are not product matching on {" "}
+                We&apos;re sorry, there are no products matching on {" "}
                 <span className='text-base text-pink-500 font-semibold'>{selectedTab}</span>
                 {" "}criteria at this moment.
             </motion.p>

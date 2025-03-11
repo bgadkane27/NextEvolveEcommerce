@@ -7,27 +7,30 @@ import PriceView from './PriceView';
 import AddToCartButton from './AddToCartButton';
 
 const ProductCard = ({ product }: { product: Product }) => {
-
-  console.log("Product", product);
   return (
     <div className='group text-sm rounded-lg overflow-hidden'>
-      <div className='bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-200 overflow-hidden'>
+      <div className='overflow-hidden border border-gray-300 border-b-0  rounded-lg rounded-b-none relative'>
         {product?.images && (
           <Link href={"/product"}>
             <Image src={urlFor(product?.images[0]).url()} alt='product?.name'
-              width={500} height={500} priority
-              className='w-full h-64 object-contain overflow-hidden group-hover:scale-105 hoverEffect'
+              width={1000} height={1000} priority
+              className='w-full h-64 object-contain overflow-hidden hoverEffect'
             />
           </Link>
         )}
+        {product?.stock === 0 && (
+          <div className='absolute top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center'>
+            <p className='text-md font-semibold text-white'>Out of Stock</p>
+          </div>
+        )}
       </div>
-      <div className='flex flex-col gap-1.5 py-3 px-3 bg-zinc-50 border border-t-0 rounded-xl rounded-tr-none rounded-tl-none'>
+      <div
+        className='flex flex-col gap-1.5 py-3 px-3 border-gray-300 bg-zinc-100 border border-t-0 
+      rounded-xl rounded-tr-none rounded-tl-none bg-gradient-to-t from-blue-400 to-emerald-300'>
         <h2 className='text-xl font-semibold line-clamp-1 font-serif'>{product?.name}</h2>
-        <p>{product?.intro}</p>
+        <p className='line-clamp-1'>{product?.intro}</p>
         <PriceView price={product?.price} discount={product?.discount} />
-        <AddToCartButton product={product}/>
-      </div>
-      <div>
+        <AddToCartButton product={product} />
       </div>
     </div>
   )
