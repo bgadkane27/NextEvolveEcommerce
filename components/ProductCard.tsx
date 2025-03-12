@@ -11,7 +11,7 @@ const ProductCard = ({ product }: { product: Product }) => {
     <div className='group text-sm rounded-lg overflow-hidden'>
       <div className='overflow-hidden border border-gray-300 border-b-0  rounded-lg rounded-b-none relative'>
         {product?.images && (
-          <Link href={"/product"}>
+          <Link href={`/product/${product?.slug?.current}`}>
             <Image src={urlFor(product?.images[0]).url()} alt='product?.name'
               width={1000} height={1000} priority
               className='w-full h-64 object-contain overflow-hidden hoverEffect'

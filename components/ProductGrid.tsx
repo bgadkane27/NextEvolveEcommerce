@@ -8,6 +8,7 @@ import { Product } from "@/sanity.types";
 import ProductCard from "./ProductCard";
 import NoProduct from "./NoProduct";
 import { LoaderIcon } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 const ProductGrid = () => {
   const [selectedTab, setSelectedTab] = useState(productData[0]?.title || "");
@@ -38,16 +39,23 @@ const ProductGrid = () => {
       {loading ? (
         <div className="mt-5 flex flex-col items-center justify-center p-6 min-h-60 space-y-4 text-center rounded-md bg-gray-100 w-full">
           <div className="flex items-center space-x-2 text-blue-600">
-            <LoaderIcon className="animate-spin"/>
+            <LoaderIcon className="animate-spin" />
             <span className="text-lg font-semibold">Loading...</span>
           </div>
         </div>
       ) : products.length ? (
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 w-full mt-5">
           {products.map((product: Product) => (
-            <div key={product._id}>
-              <ProductCard product={product} />
-            </div>
+            <AnimatePresence key={product._id}>
+              <motion.div 
+              layout 
+              initial={{opacity:0.2}}
+              animate={{opacity:1}}
+              exit={{opacity:0}}
+              >
+                <ProductCard product={product} />
+              </motion.div>
+            </AnimatePresence>
           ))}
         </div>
       ) : (
