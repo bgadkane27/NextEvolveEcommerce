@@ -37,7 +37,7 @@ const ProductGrid = () => {
     <div className="mt-10 flex flex-col items-center">
       <HomeTabbar selectedTab={selectedTab} onTabSelect={setSelectedTab} />
       {loading ? (
-        <div className="mt-5 flex flex-col items-center justify-center p-6 min-h-60 space-y-4 text-center rounded-md bg-gray-100 w-full">
+        <div className="mt-5 flex flex-col items-center justify-center p-6 min-h-60 space-y-4 text-center">
           <div className="flex items-center space-x-2 text-blue-600">
             <LoaderIcon className="animate-spin" />
             <span className="text-lg font-semibold">Loading...</span>
@@ -49,9 +49,10 @@ const ProductGrid = () => {
             <AnimatePresence key={product._id}>
               <motion.div 
               layout 
-              initial={{opacity:0.2}}
-              animate={{opacity:1}}
-              exit={{opacity:0}}
+              initial={{opacity:0, y:20}}
+              animate={{opacity:1, y:0 }}
+              exit={{opacity:0, y:-20}}
+              transition={{ duration: 1, ease: "easeInOut" }}
               >
                 <ProductCard product={product} />
               </motion.div>

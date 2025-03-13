@@ -5,7 +5,7 @@ import ProductGrid from "@/components/ProductGrid";
 
 export default function Home() {
   return (
-    <div className="bg-[url('/banner.png')] bg-cover bg-center bg-no-repeat w-full">
+    <div>
       <Container className="py-10">
         <HomeBanner />
         <ProductGrid />
