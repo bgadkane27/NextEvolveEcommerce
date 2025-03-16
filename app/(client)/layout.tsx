@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import localFont from 'next/font/local';
+import { Providers } from "../providers";
 
 const raleway = localFont({
   src: "../fonts/Raleway.woff2",
@@ -44,9 +45,11 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+          <Providers>
           <Header />
           {children}
           <Footer />
+          </Providers>
         </body>
       </html>
     </ClerkProvider>

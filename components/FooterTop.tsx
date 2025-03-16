@@ -32,7 +32,7 @@ const data: Props[] = [
 
 const FooterTop = () => {
   return (
-    <div className='grid grid-cols-2 lg:grid-cols-4 border-b'>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-b'>
       {data.map((item, index) => (<ContactItem key={index}
         icon={item?.icon} title={item?.title} subtitle={item?.subtitle}
       />))}

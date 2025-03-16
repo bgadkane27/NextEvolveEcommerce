@@ -44,7 +44,7 @@ const ProductGrid = () => {
           </div>
         </div>
       ) : products.length ? (
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 w-full mt-5">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 w-full mt-5">
           {products.map((product: Product) => (
             <AnimatePresence key={product._id}>
               <motion.div 

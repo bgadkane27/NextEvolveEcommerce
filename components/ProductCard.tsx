@@ -20,14 +20,14 @@ const ProductCard = ({ product }: { product: Product }) => {
         )}
         {product?.stock === 0 && (
           <div className='absolute top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center'>
-            <p className='text-md font-semibold text-white'>Out of Stock</p>
+            <p className='text-sm font-medium tracking-wide text-white bg-pink-600 p-1 px-2 rounded-xl'>Out of Stock</p>
           </div>
         )}
       </div>
       <div
         className='flex flex-col gap-1.5 py-3 px-3 border-gray-300 bg-zinc-100 border border-t-0 
       rounded-xl rounded-tr-none rounded-tl-none bg-gradient-to-t from-blue-400 to-emerald-300'>
-        <h2 className='text-xl font-semibold line-clamp-1 font-serif'>{product?.name}</h2>
+        <h2 className='text-lg font-semibold line-clamp-1 font-serif'>{product?.name}</h2>
         <p className='line-clamp-1'>{product?.intro}</p>
         <PriceView price={product?.price} discount={product?.discount} />
         <AddToCartButton product={product} />
