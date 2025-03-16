@@ -11,7 +11,7 @@ const HeaderMenu = () => {
     <div className='hidden md:inline-flex w-1/3 items-center gap-5 text-sm font-semibold capitalize'>
       {
         headerData?.map((item) => (
-          <Link key={item?.title} href={item?.href}
+          <Link key={item?.title} href={item?.href === '/' ? item.href : `/category${item.href}`}
             className={`hover:text-muted-foreground hoverEffect relative group ${pathname === item?.href && 'text-blue-800'}`}
           >
             {item?.title}

@@ -8,8 +8,8 @@ export const headerData = [
     href: "/men"
   },
   {
-    title: "Woman",
-    href: "/woman"
+    title: "Women",
+    href: "/women"
   },
   {
     title: "Kids",
@@ -51,30 +51,30 @@ export const categoriesData = [
     href: "/featured"
   },
   {
-    title: "Others",
-    href: "/"
+    title: "Gifts",
+    href: "/gift"
   },
 ]
 
 export const quickLinksData = [
   {
     title: "About us",
-    href: "/about-us"
+    href: "/about"
   },
   {
     title: "Contact us",
-    href: "/contact-us"
+    href: "/contact"
   },
   {
     title: "Terms and conditions",
-    href: "/terms-and-conditions"
+    href: "/terms"
   },
   {
     title: "Privacy policy",
-    href: "/"
+    href: "/privacy"
   },
   {
     title: "FAQs",
-    href: "/faqs"
+    href: "/faq"
   },
 ]
