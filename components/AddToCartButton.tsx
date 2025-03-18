@@ -15,7 +15,7 @@ const AddToCartButton = ({ product, className }: Props) => {
   const isOutofStock = product?.stock === 0;
   const itemCount = 0;
   return (
-    <div className='w-full'>
+    <div>
       {
         itemCount ? (
         <div className='w-full text-sm'>

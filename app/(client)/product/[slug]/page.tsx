@@ -31,11 +31,11 @@ const SingleProductPage = async ({params}:{params:Promise<{slug:string}>}) => {
                     )
                 }
                 <p className='text-sm text-gray-600 tracking-wider'>{product?.description}</p>
-                <div>
+                <div className='w-full flex item-center gap-2 mt-2'>
                     <AddToCartButton product={product} />
-                    <Button>
-                        <Heart className='w-5 h-5' />
-                    </Button>
+                    <button className='border p-2 rounded hover:cursor-pointer hover:text-pink-600'>
+                        <Heart className='w-4 h-4' />
+                    </button>
                 </div>
             </div>
         </Container>
