@@ -13,9 +13,9 @@ interface Props {
 
 const AddToCartButton = ({ product, className }: Props) => {
   const isOutofStock = product?.stock === 0;
-  const itemCount = 4;
+  const itemCount = 0;
   return (
-    <div>
+    <div className='w-full'>
       {
         itemCount ? (
         <div className='w-full text-sm'>
@@ -33,7 +33,7 @@ const AddToCartButton = ({ product, className }: Props) => {
         ) : (
           <Button variant={'outline'}
             disabled={isOutofStock}
-            className={cn('hover:cursor-pointer rounded', className)}><ShoppingCart className='w-5 h-5' />
+            className={cn('hover:cursor-pointer rounded', className)}><ShoppingCart className='w-5 h-5' />Add to Cart
           </Button>
         )
       }
