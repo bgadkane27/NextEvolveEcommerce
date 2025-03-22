@@ -74,7 +74,6 @@ const SearchBar = () => {
           </form>
         </DialogHeader>
         <div className='w-full min-h-[100px] h-auto overflow-y-scroll border rounded'>
-          {/* <p className='text-center'>Search and explore the products.</p> */}
           <div>
             {
               loading ? (
@@ -83,28 +82,39 @@ const SearchBar = () => {
               ) : product?.length ? (
                 (
                   product.map((product: Product) => (
-                    <div key={product?._id} className='overflow-hidden border-b'>
-                      <div className='flex gap-4 p-1'>
+                    <div key={product?._id} className='overflow-hidden border-b last:border-0'>
+                      <div className='flex gap-4 p-1 '>
                         <Link href={`/product/${product?.slug?.current}
-                        `}                        >
+                        `} onClick={() => {
+                            setShowSearch(false);
+                            setSearch("");
+                          }}                    >
                           {product?.images && (<Image
                             width={200}
                             height={200}
                             src={urlFor(product?.images[0]).url()}
                             alt={product?.name || 'Product image'}
-                            className='object-cover max-w-[100px] h-full'
+                            className='object-cover max-w-[100px] max-h-[100px]'
                           />
                           )}
                         </Link>
-                        <div>
-                        <h2 className='line-clamp-1 p-'>{product?.name}</h2>
+                        <div className='mt-2'>
+                          <Link href={`/product/${product?.slug?.current}`}
+                            onClick={() => {
+                              setShowSearch(false);
+                              setSearch(""); // Reset input value
+                            }}
+                          >
+                            <h2 className='line-clamp-1 font-semibold mb-1 hover:text-pink-500 hoverEffect'>{product?.name}</h2>
+                          </Link>
+                          <p className='text-sm text-gray-600'>{product?.intro}</p>
+                        </div>
                       </div>
-                      </div>                      
                     </div>
                   ))
                 )
               ) : <div className='text-center py-10 font-semibold tracking-wide'>
-                {search && product.length == 0 ? <p>No matching products found with the keyword <span className='text-pink-500 italic line-through'>{search}</span>. Please try something else.</p> : (
+                {search && product.length == 0 ? <p>No matching products found with the keyword <span className='text-pink-500 italic'>{search}</span>. Please try something else.</p> : (
                   <p className='text-green-600 flex item-center justify-center gap-1'>
                     Search and explore the products.
                   </p>

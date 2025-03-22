@@ -27,11 +27,19 @@ const SingleProductPage = async ({ params }: { params: Promise<{ slug: string }>
                         className='text-sm md:text-2xl font-semibold mb-2' />
                     <p className='text-sm text-gray-900'>Inclusive of all taxes</p>
                 </div>
-                {
-                    product?.stock && (
-                        <p className="w-24 bg-green-100 text-green-600 text-center text-sm py-2 font-semibold rounded-md">In Stock</p>
-                    )
-                }
+                {product?.stock ? (
+                    <p className="w-24 bg-green-100 text-green-600 text-center text-sm py-2 font-semibold rounded-md">
+                        In Stock
+                    </p>
+                ) : product?.stock === 0 ? (
+                    <p className="w-24 bg-red-100 text-red-600 text-center text-sm py-2 font-semibold rounded-md">
+                        Out of Stock
+                    </p>
+                ) : (
+                    <p className="w-24 bg-gray-100 text-gray-600 text-center text-sm py-2 font-semibold rounded-md">
+                        Stock Unavailable
+                    </p>
+                )}
                 <p className='text-sm text-gray-600 tracking-wider'>{product?.description}</p>
                 <div className='w-full flex item-center gap-2 mt-2'>
                     <AddToCartButton product={product} />
@@ -43,15 +51,15 @@ const SingleProductPage = async ({ params }: { params: Promise<{ slug: string }>
                 <Divider />
                 <div className='flex item-center justify-between gap-4 p-2 text-sm'>
                     <div className='flex items-center gap-1 hover:text-pink-600 hoverEffect'>
-                        <SquareSplitHorizontal className='w-5 h-5'/>
+                        <SquareSplitHorizontal className='w-5 h-5' />
                         <p>Compare Color</p>
                     </div>
                     <div className='flex items-center gap-1 hover:text-pink-600 hoverEffect'>
-                        <CircleHelp className='w-5 h-5'/>
+                        <CircleHelp className='w-5 h-5' />
                         <p>Ask a Question</p>
                     </div>
                     <div className='flex items-center gap-1 hover:text-pink-600 hoverEffect'>
-                        <Truck className='w-5 h-5'/>
+                        <Truck className='w-5 h-5' />
                         <p>Delivery & Return</p>
                     </div>
                     <div className='flex items-center gap-1 hover:text-pink-600 hoverEffect'>

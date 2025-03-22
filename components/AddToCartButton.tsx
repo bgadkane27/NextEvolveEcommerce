@@ -1,10 +1,12 @@
+"use client";
 import { Product } from '@/sanity.types'
 import React from 'react'
-import { Button } from './ui/button';
+// import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
 import { ShoppingCart } from 'lucide-react';
 import PriceFormatter from './PriceFormatter';
 import QuantityButton from './QuantityButton';
+import { Button } from '@heroui/react';
 
 interface Props {
   product: Product;
@@ -31,10 +33,14 @@ const AddToCartButton = ({ product, className }: Props) => {
           </div>
         </div>
         ) : (
-          <Button variant={'outline'}
-            disabled={isOutofStock}
-            className={cn('hover:cursor-pointer rounded', className)}><ShoppingCart className='w-5 h-5' />Add to Cart
-          </Button>
+          // <Button variant={'outline'}
+          //   disabled={isOutofStock}
+          //   className={cn('hover:cursor-pointer rounded', className)}><ShoppingCart className='w-5 h-5' />Add to Cart
+          // </Button>
+          <Button color="primary" 
+          disabled={isOutofStock}
+          className={cn('hover:cursor-pointer rounded disabled:cursor-not-allowed disabled:opacity-60', className)}
+          ><ShoppingCart className='w-5 h-5' />Add to Cart</Button>
         )
       }
     </div>
