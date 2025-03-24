@@ -8,7 +8,7 @@ const AboutPage = () => {
   return (
     <div>
       <Container>
-        <div className='flex flex-col sm:flex-row gap-4 mt-4 mb-2'>
+        <div className='flex flex-col sm:flex-row gap-4 mt-4 mb-2 bg-gray-50'>
           <div className='w-2/3 p-4'>
             <h1 className='text-6xl font-semibold'>About Tulos</h1>
             <p className='mt-4 text-gray-600 text-justify w-full max-w-2xl'>Tulos is your ultimate online shopping 
