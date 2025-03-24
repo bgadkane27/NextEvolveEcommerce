@@ -54,7 +54,7 @@ const SearchBar = () => {
         <SearchIcon
           className='w-5 h-5 hover:text-black hoverEffect' />
       </DialogTrigger>
-      <DialogContent className='h-[90vh] overflow-hidden flex flex-col'>
+      <DialogContent className='h-[90vh] overflow-hidden flex flex-col w-full max-w-5xl'>
         <DialogHeader>
           <DialogTitle className='text-blue-800'>Search Product</DialogTitle>
           <hr className='mb-2' />

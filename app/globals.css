@@ -147,3 +147,11 @@ body{
 body{
   font-family: var(--font-akaya);
 } */
+
+:root{
+  --font-winky: 'winkySans', sans-serif;
+}
+
+body{
+  font-family: var(--font-winky);
+}

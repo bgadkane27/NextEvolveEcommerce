@@ -7,7 +7,7 @@ import { categoriesData, quickLinksData } from '@/constants'
 
 const FooterBottom = () => {
     return (
-        <div className="bg-[url('/banner.png')] bg-cover bg-center h-full w-full">
+        <div className="bg-[url('/footer.webp')] bg-cover bg-center h-full w-full px-4">
             <div className='grid grid-cols-1 lg:grid-cols-4 gap-4 py-10'>
                 <div className='space-y-4'>
                     <Logo />
@@ -55,7 +55,7 @@ const FooterBottom = () => {
                                 required
                                 type="email"
                                 placeholder="email@example.com"
-                                className='w-full max-w-80 p-2 px-4 border border-gray-300 focus:outline-none focus:border-blue-500'
+                                className='w-full max-w-80 p-2 px-4 border border-gray-500 focus:outline-none focus:border-gray-700'
                             />
                         </div>
                         <div>
