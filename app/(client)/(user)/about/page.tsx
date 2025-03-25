@@ -24,10 +24,9 @@ const AboutPage = () => {
           </div>
           <div className='mt-4 py-4'>
             <Image 
-            isBlurred
             src='/about.png' 
             alt='About Tulos'
-            width={400} height={500} />
+            width={400} />
           </div>
         </div>
       </Container>
