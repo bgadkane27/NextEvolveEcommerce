@@ -16,7 +16,7 @@ const FooterBottom = () => {
                         blanditiis illo dignissimos.</p>
                     <SocialMedia className='text-black/60'
                         iconClassName='border-blue-600'
-                        tooltipClassName='bg-blue-600'
+                        tooltipClassName='bg-black'
                     />
                 </div>
                 <div className='px-0 lg:px-10 '>
