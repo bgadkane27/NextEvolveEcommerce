@@ -2,7 +2,7 @@
 import Container from '@/components/Container';
 import SocialMedia from '@/components/SocialMedia';
 import { Button } from '@heroui/react';
-import { LocateIcon, MailIcon, PhoneIcon } from 'lucide-react';
+import { MailIcon, MapPin, MapPinHouse, PhoneIcon } from 'lucide-react';
 import React from 'react'
 
 const ContactPage = () => {
@@ -10,17 +10,23 @@ const ContactPage = () => {
     <div className='mt-10'>
       <Container>
         <h2 className="text-2xl font-semibold text-center">Contact Us</h2>
-        <p className="text-sm text-gray-600 text-center mb-6">Any question or remarks? Just write us a message!</p>        
+        <p className="text-sm text-gray-600 text-center mb-6">Any question or remarks? Just write us a message!</p>
         <div className="flex flex-col md:flex-row items-center justify-center h-auto mb-6 bg-gray-100 p-2 rounded-lg overflow-hidden">
           {/* Left Side - Contact Information */}
-          <div className="bg-blue-800 text-white p-8 rounded-lg md:w-1/3 h-[420px] shadow-lg">
+          <div className="bg-blue-800 text-white p-8 rounded-lg md:w-1/3 h-[400px] shadow-lg">
             <h2 className="text-2xl font-semibold tracking-wider mb-4">Contact Information</h2>
             <p className="text-sm mb-4">Fill up the form and our Team will get back to you within 24 hours.</p>
 
             <div className="space-y-6 text-sm">
-              <p className="flex items-center gap-2"><span><PhoneIcon className='w-4 h-4'/></span> +91 9988776655</p>
-              <p className="flex items-center gap-2"><span><MailIcon className='w-4 h-4'/></span> example@mail.com</p>
-              <p className="flex items-center gap-2"><span><LocateIcon className='w-4 h-4'/></span> 102 Street 2714 Pune</p>
+              <div className='flex items-center gap-2'>
+                <PhoneIcon className='w-4 h-4' />
+                <a href="tel:9673929867" className="hover:text-pink-500 hoverEffect">+91 9988776655</a>
+              </div>
+              <div className='flex items-center gap-2'>
+                <MailIcon className='w-4 h-4' />
+                <a href="mailto:adkaneb@gmail.com" className="hover:text-pink-500 hoverEffect">example@mail.com</a>
+              </div>
+              <p className="flex items-center gap-2"><span><MapPinHouse className='w-4 h-4' /></span>Rachana Bunglow, Block A, Pune - 411001</p>
             </div>
             <SocialMedia className='mt-10' />
           </div>
@@ -54,11 +60,12 @@ const ContactPage = () => {
               {/* Message */}
               <div>
                 <label className="text-gray-700">Message</label>
-                <textarea placeholder="Write your message.." className="w-full p-2 border border-gray-300 rounded-md h-24"></textarea>
+                <textarea placeholder="Write your message.."
+                  className="w-full p-2 border border-gray-300 rounded-md h-24 min-h-24 max-h-24 resize-none"></textarea>
               </div>
 
               {/* Submit Button */}
-              <Button color='primary'>Send Message</Button>
+              <Button color='primary' type='submit'>Send Message</Button>
             </form>
           </div>
         </div>
