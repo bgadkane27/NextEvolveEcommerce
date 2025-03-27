@@ -7,14 +7,16 @@ import React from 'react'
 
 const ContactPage = () => {
   return (
-    <div className='mt-10'>
+    <div className='my-10'>
       <Container>
-        <h2 className="text-2xl font-semibold text-center">Contact Us</h2>
-        <p className="text-sm text-gray-600 text-center mb-6">Any question or remarks? Just write us a message!</p>
-        <div className="flex flex-col md:flex-row items-center justify-center h-auto mb-6 bg-gray-100 p-2 rounded-lg overflow-hidden">
+        <div className='w-full p-4'>
+          <h2 className="text-2xl tracking-wide uppercase text-center">Contact Us</h2>
+          <p className="text-sm text-gray-600 text-center">Any question or remarks? Just write us a message!</p>
+        </div>
+        <div className="flex flex-col items-center justify-center py-4">
           {/* Left Side - Contact Information */}
-          <div className="bg-blue-800 text-white p-8 rounded-lg md:w-1/3 h-[400px] shadow-lg">
-            <h2 className="text-2xl font-semibold tracking-wider mb-4">Contact Information</h2>
+          {/* <div className="bg-blue-800 text-white p-8 rounded-lg md:w-1/3">
+            <h2 className="text-2xl tracking-wider mb-4">Contact Information</h2>
             <p className="text-sm mb-4">Fill up the form and our Team will get back to you within 24 hours.</p>
 
             <div className="space-y-6 text-sm">
@@ -29,10 +31,10 @@ const ContactPage = () => {
               <p className="flex items-center gap-2"><span><MapPinHouse className='w-4 h-4' /></span>Rachana Bunglow, Block A, Pune - 411001</p>
             </div>
             <SocialMedia className='mt-10' />
-          </div>
+          </div> */}
 
           {/* Right Side - Form */}
-          <div className="bg-white p-8 rounded-lg shadow-lg md:w-1/2 ml-0 md:ml-6 w-full">
+          <div className="bg-white p-8 rounded-lg shadow-lg md:w-1/2 w-full">
             <form className="space-y-4">
               {/* Name Fields */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

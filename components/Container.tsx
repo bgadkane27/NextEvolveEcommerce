@@ -7,7 +7,7 @@ interface Props{
 
 const Container = ({children, className}: Props) => {
   return (
-    <div className={cn('max-w-screen-xl mx-auto px-4', className)}>{children}</div>
+    <div className={cn('max-w-screen-xl mx-auto bg-gradient-to-r from-teal-50 to-rose-50', className)}>{children}</div>
   )
 }
 

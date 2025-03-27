@@ -14,7 +14,7 @@ const Header = async () => {
   const user = await currentUser();
   return (
     <header className='border-b border-b-gray-400 py-3'>
-      <Container className='flex items-center justify-between gap-7 font-medium'>
+      <Container className='flex items-center justify-between gap-7 font-medium bg-transparent'>
         <div className='w-auto flex items-center'>
           <MobileMenu />
           <Logo />
