@@ -42,7 +42,7 @@ export default function FAQs() {
       {faqs.map((faq, index) => (
         <AccordionItem value={faq?.question} key={index} className="group"> 
           <AccordionTrigger className="text-lg font-[100] group-hover:font-[400] hoverEffect">{faq?.question}</AccordionTrigger>
-          <AccordionContent className="text-gray-600">{faq?.answer}</AccordionContent>
+          <AccordionContent className="text-gray-6  00">{faq?.answer}</AccordionContent>
         </AccordionItem>
       ))}
     </Accordion>
