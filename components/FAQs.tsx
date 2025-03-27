@@ -1,5 +1,4 @@
-"use client";
-import { Accordion, AccordionItem } from "@heroui/react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 
 const faqs = [
   {
@@ -16,37 +15,34 @@ const faqs = [
     answer: "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    question: "What is the return policy?",
+    question: "What is the return h policy?",
     answer: "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    question: "What is the return policy?",
+    question: "What is the return f policy?",
     answer: "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    question: "What is the return policy?",
+    question: "What is the return g policy?",
     answer: "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    question: "What is the return policy?",
+    question: "What is the return r policy?",
     answer: "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    question: "What is the return policy?",
+    question: "What is the return p policy?",
     answer: "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   }
 ];
 
 export default function FAQs() {
   return (
-    <Accordion className="w-full">
+    <Accordion type="single" collapsible defaultValue={faqs[0].question} className="w-full px-6">
       {faqs.map((faq, index) => (
-        <AccordionItem
-          key={index}
-          aria-label={faq.question}
-          title={<span className="text-lg font-semibold text-blue-600">{faq.question}</span>}
-        >
-          <p className="text-gray-800">{faq.answer}</p>
+        <AccordionItem value={faq?.question} key={index} className="group"> 
+          <AccordionTrigger className="text-lg font-[100] group-hover:font-[400] hoverEffect">{faq?.question}</AccordionTrigger>
+          <AccordionContent className="text-gray-600">{faq?.answer}</AccordionContent>
         </AccordionItem>
       ))}
     </Accordion>

@@ -7,8 +7,10 @@ const FaqPage = () => {
   return (
     <div className='my-10'>
       <Container>
-        <div className='flex flex-col gap-2 w-full max-w-[800px] mx-auto p-4 border border-gray-200 rounded-lg'>
-          <h1 className='text-xl font-semibold text-center'>Frequently Asked Questions</h1>
+        <div className='flex flex-col items-center p-4'>
+          <h1 className='text-2xl tracking-wide'>Frequently Asked Questions</h1>          
+        </div>
+        <div className='w-full max-w-[600px] mx-auto border border-gray-200 rounded-lg'>
           <FAQs />
         </div>
       </Container>
