@@ -5,7 +5,7 @@ import { LoaderIcon } from 'lucide-react';
 
 const NoProduct = ({ selectedTab, className }: { selectedTab: string; className?: string }) => {
     return (
-        <div className={cn('flex flex-col items-center justify-center p-6 min-h-60 space-y-4 w-full text-center rounded-md mt-5 bg-gray-100')}>
+        <div className={cn('flex flex-col items-center justify-center p-6 min-h-60 space-y-4 w-full text-center mt-5 bg-blue-100/50')}>
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}

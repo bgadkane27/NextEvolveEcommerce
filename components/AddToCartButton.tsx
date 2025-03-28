@@ -39,7 +39,7 @@ const AddToCartButton = ({ product, className }: Props) => {
           // </Button>
           <Button color="primary" 
           disabled={isOutofStock}
-          className={cn('hover:cursor-pointer rounded disabled:cursor-not-allowed disabled:opacity-60', className)}
+          className={cn('hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-60', className)}
           ><ShoppingCart className='w-5 h-5' />Add to Cart</Button>
         )
       }

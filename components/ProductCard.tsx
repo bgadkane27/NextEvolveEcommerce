@@ -14,7 +14,7 @@ const ProductCard = ({ product }: { product: Product }) => {
           <Link href={`/product/${product?.slug?.current}`}>
             <Image src={urlFor(product?.images[0]).url()} alt='product?.name'
               width={1000} height={1000} priority
-              className='w-full h-64 object-contain overflow-hidden hoverEffect'
+              className='w-full h-64 object-contain overflow-hidden hover:scale-105 hoverEffect'
             />
           </Link>
         )}
