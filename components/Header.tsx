@@ -13,7 +13,7 @@ import { ListOrdered} from 'lucide-react'
 const Header = async () => {
   const user = await currentUser();
   return (
-    <header className='border-b border-b-gray-400 py-3'>
+    <header className='border-b border-b-gray-400 py-3 sticky top-0 z-50 bg-white'>
       <Container className='flex items-center justify-between gap-7 font-medium bg-transparent'>
         <div className='w-auto flex items-center'>
           <MobileMenu />
