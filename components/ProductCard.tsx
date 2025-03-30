@@ -27,7 +27,7 @@ const ProductCard = ({ product }: { product: Product }) => {
       <div
         className='flex flex-col gap-1.5 py-3 px-3 border-gray-300 bg-zinc-100 border border-t-0 
       rounded-xl rounded-tr-none rounded-tl-none bg-gradient-to-t from-blue-400 to-emerald-300'>
-        <h2 className='text-lg font-semibold line-clamp-1 font-serif'>{product?.name}</h2>
+        <h2 className='text-lg font-semibold line-clamp-1'>{product?.name}</h2>
         <p className='line-clamp-1'>{product?.intro}</p>
         <PriceView price={product?.price} discount={product?.discount} />
         <AddToCartButton product={product} />
