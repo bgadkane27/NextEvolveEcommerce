@@ -9,7 +9,6 @@ interface Props {
     product: Product;
     className?: string;
 }
-
 const QuantityButton = ({ product, className }: Props) => {
     const { getItemCount, addItem, decreaseItemQuantity } = useCartStore();
     const isOutofStock = product?.stock === 0;

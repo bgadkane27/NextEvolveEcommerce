@@ -1,3 +1,4 @@
+
 import React from 'react'
 import HeaderMenu from './HeaderMenu'
 import Logo from './Logo'
@@ -27,12 +28,12 @@ const Header = async () => {
             <SignedIn>
               <Link href={'/orders'} className='group relative'>
                 <ListOrdered className='w-5 h-5 group-hover:text-black hoverEffect' />
-                <span className='absolute -top-1.5 -right-1.5 bg-blue-800 text-white font-medium h-4 w-4 rounded-full flex items-center justify-center'>0</span>
+                <span className='absolute -top-1.5 -right-1.5 bg-blue-600 text-white font-medium h-4 w-4 rounded-full flex items-center justify-center'>0</span>
               </Link>
               <UserButton />
             </SignedIn>
             {!user && (<SignInButton mode='modal'>
-              <button className='text-sm font-semibold hover:text-black hoverEffect'>Sign in</button>
+              <button className='pr-4 text-sm font-semibold hover:text-black hoverEffect'>Sign in</button>
             </SignInButton>)}
              {/* <SignedOut> */}
               {/* <SignInButton mode = 'modal'/>s */}

@@ -9,7 +9,7 @@ interface Props {
 
 const HomeTabbar = ({ selectedTab, onTabSelect }: Props) => {
   return (
-    <div className='flex items-center gap-1.5 text-sm font-semibold'>
+    <div className='flex items-center gap-1.5 text-sm'>
       <div className='flex items-center gap-1.5'>
         {
           productData?.map((item) => (
@@ -19,8 +19,8 @@ const HomeTabbar = ({ selectedTab, onTabSelect }: Props) => {
                 event.preventDefault();
                 onTabSelect?.(item?.title);
               }}  
-              className={`px-4 py-1.5 md:px-6 md:py-2 border border-black rounded-full hover:bg-black hover:text-white hoverEffect 
-              ${selectedTab === item?.title && 'bg-black text-white'}`}
+              className={`px-4 py-1.5 md:px-6 md:py-2 border border-gray-200 rounded-full hover:bg-pink-600 hover:text-white hoverEffect 
+              ${selectedTab === item?.title && 'bg-blue-600 text-white'}`}
             >
               {item?.title}
             </button>
@@ -28,7 +28,7 @@ const HomeTabbar = ({ selectedTab, onTabSelect }: Props) => {
         }
       </div>
       <button 
-        className='p-2 border border-black rounded-full hover:bg-black hover:text-white hoverEffect'
+        className='p-2 border border-blue-500 rounded-full hover:bg-pink-600 hover:text-white hoverEffect'
         onClick={(event) => event.preventDefault()}
       >
         <Repeat className='w-5 h-5' />
