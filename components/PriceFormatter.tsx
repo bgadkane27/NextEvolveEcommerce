@@ -16,7 +16,7 @@ const PriceFormatter = ({amount, className}:Props) => {
       });
      
   return (
-    <span className={cn('text-lg font-semibold text-black', className)}>{formattedPrice}</span>
+    <span className={cn('text-lg font-semibold', className)}>{formattedPrice}</span>
   )
 }
 
