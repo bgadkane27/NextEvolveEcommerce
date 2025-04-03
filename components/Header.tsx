@@ -10,9 +10,11 @@ import { currentUser } from '@clerk/nextjs/server'
 import { ClerkLoaded, SignedIn, SignInButton, UserButton} from '@clerk/nextjs'
 import Link from 'next/link'
 import { ListOrdered} from 'lucide-react'
+import { getProductCategories } from '@/sanity/helpers/Queries';
 
 const Header = async () => {
   const user = await currentUser();
+  const categories = await getProductCategories();
   return (
     <header className='border-b border-b-gray-400 py-3 sticky top-0 z-50 bg-white'>
       <Container className='flex items-center justify-between gap-7 font-medium bg-transparent'>
@@ -20,7 +22,7 @@ const Header = async () => {
           <MobileMenu />
           <Logo />
         </div>
-        <HeaderMenu />
+        <HeaderMenu categories={categories} />
         <div className='flex items-center justify-end gap-5'>
           <SearchBar />
           <CartIcon />

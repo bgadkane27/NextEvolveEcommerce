@@ -15,3 +15,17 @@ export const getProductBySlug = async(slug:string)=>{
         console.error('Error while fetching product:', error);
     }
 }
+
+export const getProductCategories = async() =>{
+    const PRODUCT_CATEGORY = defineQuery(`*[_type == "category"] | order(title asc)`)
+    try {
+        const categories = await sanityFetch({
+            query: PRODUCT_CATEGORY
+        })
+        return categories.data || [];
+        
+    } catch (error) {
+        console.error('Error while fetching product categories:', error);
+        return [];
+    }
+}
