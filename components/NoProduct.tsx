@@ -5,13 +5,13 @@ import { LoaderIcon } from 'lucide-react';
 
 const NoProduct = ({ selectedTab, className }: { selectedTab: string; className?: string }) => {
     return (
-        <div className={cn('flex flex-col items-center justify-center p-6 min-h-60 space-y-4 w-full text-center mt-5 bg-blue-100/50')}>
+        <div className={cn('flex flex-col items-center justify-center p-6 min-h-60 space-y-4 w-full text-center mt-5 bg-blue-100/50', className)}>
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <h2 className='text-2xl font-semibold'>Oops! No Product Available</h2>
+                <h2 className='text-2xl text-pink-500'>Oops! No Product Available</h2>
             </motion.div>
             <motion.p
                 initial={{ opacity: 0 }}

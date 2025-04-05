@@ -40,7 +40,7 @@ const ProductGrid = () => {
         <div className="mt-5 flex flex-col items-center justify-center p-6 min-h-60 space-y-4 text-center">
           <div className="flex items-center space-x-2 text-blue-600">
             <LoaderIcon className="animate-spin" />
-            <span className="text-lg font-semibold">Loading...</span>
+            <span className="text-lg">Loading...</span>
           </div>
         </div>
       ) : products.length ? (
