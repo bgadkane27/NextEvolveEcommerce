@@ -51,9 +51,9 @@ const ProductCategory = ({ categories, slug }: props) => {
             <div className='w-full'>
                 {loading ? (
                     <div className="flex flex-col items-center justify-center p-6 min-h-60 space-y-4 text-center w-full bg-blue-100/50">
-                        <div className="flex items-center space-x-2 text-blue-800">
+                        <div className="flex items-center space-x-2 text-pink-600">
                             <LoaderIcon className="animate-spin" />
-                            <span className="text-lg">Still Loading...</span>
+                            <span className="text-lg">Loading...Please wait.</span>
                         </div>
                     </div>
                 ) : products.length ? (

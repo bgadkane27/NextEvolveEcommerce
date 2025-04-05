@@ -7,8 +7,10 @@ const CategoryPage = async ({ params }: { params: Promise<{ slug: string }> }) =
     const categories = await getProductCategories();
     return (
         <Container className='p-4'>
-            <h1 className='text-xl mb-2'>Products by Category <span className='text-green-600 capitalize font-semibold tracking-wide'>{slug && slug}</span></h1>
-        <ProductCategory categories={categories} slug={slug}/>
+            <div>
+                <h1 className='text-xl mb-2'>Products by Category <span className='text-green-600 capitalize font-semibold tracking-wide'>{slug && slug}</span></h1>
+            </div>
+            <ProductCategory categories={categories} slug={slug} />
         </Container>
     )
 }
