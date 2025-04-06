@@ -1,6 +1,7 @@
 'use client';
 
 import Container from '@/components/Container'
+import EmptyCart from '@/components/EmptyCart';
 import Loading from '@/components/Loading';
 import NoAccessToCart from '@/components/NoAccessToCart';
 import useCartStore from '@/store';
@@ -21,20 +22,27 @@ const CartPage = () => {
     return <Loading />
   }
 
+  const handleClick = () => {
+    console.log('Card clicked!');
+  };
+
   const cartProducts = getGroupedItems();
-  console.log(cartProducts);
+  // console.log(cartProducts);
 
   return (
     <div>
       {
         isSignedIn
           ? <Container>
-           <div className='p-4'>
+           {/* <div className='p-4'>
             <h1 className='text-2xl flex items-center gap-2 mb-2'><ShoppingBag />Shopping Cart</h1>
             <hr />
-           </div>
+           </div> */}
            {
-            cartProducts?.length > 0 ? '' : ''
+            cartProducts?.length > 0 
+            ? '' 
+            : 
+            <EmptyCart />
            }
           </Container>
           : <NoAccessToCart />
