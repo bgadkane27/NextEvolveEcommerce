@@ -11,15 +11,23 @@ const EmptyCart = () => {
             <Card className="max-w-[400px] flex items-center justify-center rounded-lg bg-white p-4">
                 <CardHeader className="flex items-center justify-center pb-4">
                     <motion.div
-                        animate={{ scale: [0.9, 1, 0.9], rotate: [0, 5, -5, 0] }}
-                        transition={{ repeat: Infinity, duration: 2.5, repeatType: 'reverse', ease: 'easeInOut' }}
+                        layout
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 1, ease: "easeInOut" }}
                     >
-                        <Image
-                            src="/emptyCart.webp"
-                            alt="empty cart icon"
-                            width={250}
-                            height={250}
-                        />
+                        <motion.div
+                            animate={{ scale: [0.9, 1, 0.9], rotate: [0, 5, -5, 0] }}
+                            transition={{ repeat: Infinity, duration: 2.5, repeatType: 'reverse', ease: 'easeInOut' }}
+                        >
+                            <Image
+                                src="/emptyCart.webp"
+                                alt="empty cart icon"
+                                width={250}
+                                height={250}
+                            />
+                        </motion.div>
                     </motion.div>
                 </CardHeader>
                 <Divider />

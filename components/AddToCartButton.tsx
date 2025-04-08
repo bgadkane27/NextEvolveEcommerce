@@ -47,7 +47,7 @@ const AddToCartButton = ({ product, className }: Props) => {
                 toast.success(`${product?.name} added to cart successfully!`)
               }}
               disabled={isOutofStock}
-              className='w-full rounded-sm hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-60'><ShoppingCart className='w-5 h-5' />Add to Cart</Button>
+              className='w-full rounded-full hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-60'><ShoppingCart className='w-5 h-5' />Add to Cart</Button>
           </div>
         )
       }
