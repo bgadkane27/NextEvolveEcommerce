@@ -26,7 +26,7 @@ const QuantityButton = ({ product, className }: Props) => {
             <button
             onClick={handleRemoveProduct}
             disabled = { itemCount === 0 || isOutofStock}
-            className={cn('p-2 border rounded-full hover:bg-red-500 hoverEffect', className)}><Minus className='w-5 h-5' /></button>
+            className={cn('p-2 border rounded-full hover:bg-red-500 hoverEffect', className)}><Minus className='w-5 h-5 hover:text-white' /></button>
             <span className='font-bold text-2xl p-1'>{itemCount}</span>
             <button 
             onClick={() => {
@@ -35,7 +35,7 @@ const QuantityButton = ({ product, className }: Props) => {
                     toast.success(`Quantity increased successfully!`)
                 }
               }}
-            className={cn('p-2 border rounded-full hover:bg-green-600 hoverEffect', className)}><Plus className='w-5 h-5' /></button>
+            className={cn('p-2 border rounded-full hover:bg-green-600 hoverEffect', className)}><Plus className='w-5 h-5 hover:text-white' /></button>
         </div>
     )
 }

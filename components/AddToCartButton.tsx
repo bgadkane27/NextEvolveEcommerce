@@ -28,16 +28,6 @@ const AddToCartButton = ({ product, className }: Props) => {
             <QuantityButton product={product} />
             <PriceFormatter amount={product?.price ? product?.price * itemCount : 0}
                 className={cn('text-lg font-semibold', className)} />
-            {/* <div className='flex items-center justify-between'>
-              <span className='text-sm font-semibold'>Quantity</span>
-              <QuantityButton product={product} />
-            </div> */}
-            {/* <hr /> */}
-            {/* <div className='flex items-center justify-between pt-1'>
-              <span className='text-sm font-semibold'>SubTotal</span>
-              <PriceFormatter amount={product?.price ? product?.price * itemCount : 0}
-                className={cn('text-sm font-bold', className)} />
-            </div> */}
           </div>
         ) : (
           <div className='w-full py-1'>
