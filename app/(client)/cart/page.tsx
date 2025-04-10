@@ -96,7 +96,7 @@ const CartPage = () => {
         </div>
 
         {/* Order Summary */}
-        <div className="bg-gray-100 rounded-xl p-6 shadow flex flex-col md:order-2 w-full md:w-1/3">
+        <div className="bg-gray-100 rounded-xl p-6 shadow flex flex-col md:order-2 w-full md:w-1/2 max-h-72">
           <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
           <div className="flex justify-between mb-2 text-sm">
             <span>Subtotal</span>
