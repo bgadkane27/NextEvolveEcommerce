@@ -1,5 +1,6 @@
 'use client';
 
+import { createCheckoutSession, Metadata } from '@/actions/createCheckoutSession';
 import Container from '@/components/Container'
 import EmptyCart from '@/components/EmptyCart';
 import Loading from '@/components/Loading';
@@ -9,15 +10,18 @@ import PriceView from '@/components/PriceView';
 import QuantityButton from '@/components/QuantityButton';
 import { urlFor } from '@/sanity/lib/image';
 import useCartStore from '@/store';
-import { useAuth } from '@clerk/nextjs';
-import { Divider } from '@heroui/react';
+import { useAuth, useUser } from '@clerk/nextjs';
+import { Button, Divider } from '@heroui/react';
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 
+
 const CartPage = () => {
   const [isClient, setIsClient] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { isSignedIn } = useAuth();
+  const { user } = useUser();
   const {
     getGroupedItems,
     getItemCount,
@@ -43,12 +47,33 @@ const CartPage = () => {
   if (!isSignedIn) return <NoAccessToCart />;
   if (!cartItems.length) return <EmptyCart />;
 
-  console.log(cartItems);
+  const handleCheckout = async () => {
+    setLoading(true);
+    try {
+      const metadata:Metadata = {
+        orderNumber: crypto.randomUUID(),
+        customerName: user?.fullName ?? 'Unknown',
+        customerEmail: user?.emailAddresses[0]?.emailAddress ?? 'Unknown',
+        clerkUserId: user!.id
+      }
+
+      const checkoutUrl = await createCheckoutSession(cartItems, metadata);
+      if(checkoutUrl){
+        window.location.href = checkoutUrl;
+      }
+    } catch (error) {
+      console.error('Error occured while handle checkout: ', error)
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // console.log(cartItems);
 
   return (
     <Container className="py-6">
-      <div className='flex flex-col px-4 mb-4'>
-        <h2 className='text-2xl uppercase'>Shopping Cart</h2>
+      <div className='flex flex-col items-center mb-4'>
+        <h2 className='text-2xl uppercase pb-1'>Shopping Cart</h2>
         <Divider />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -83,7 +108,7 @@ const CartPage = () => {
                 </div>
 
                 {/* Price */}
-                <div className="md:mt-0 md:text-start pr-4">
+                <div className="md:mt-0 md:text-start pr-6 pl-2">
                   <PriceFormatter
                     amount={
                       product?.price
@@ -110,17 +135,19 @@ const CartPage = () => {
           <h2 className="text-xl font-semibold">Order Summary</h2>
           <div className="flex justify-between">
             <span>Subtotal</span>
-            <span><PriceFormatter amount={getSubTotalPrice()}/></span>
+            <span><PriceFormatter amount={getSubTotalPrice()} /></span>
           </div>
           <div className="flex justify-between">
             <span>Saved</span>
-            <span className="text-green-600"><PriceFormatter amount={getSubTotalPrice() - getTotalPrice()}/></span>
+            <span className="text-green-600"><PriceFormatter amount={getSubTotalPrice() - getTotalPrice()} /></span>
           </div>
           <div className="flex justify-between border-t pt-2">
             <span className='text-lg font-semibold'>Total</span>
-            <span><PriceFormatter amount={getTotalPrice()}/></span>
+            <span><PriceFormatter amount={getTotalPrice()} /></span>
           </div>
-          <button className="bg-black text-white w-full py-2 rounded-lg">Proceed to Checkout</button>
+          <Button onPress={handleCheckout}
+            className='w-full rounded-full hover:cursor-pointer'
+            color='primary'>Proceed to checkout</Button>
           <button className="border w-full py-2 rounded-lg">PayPal</button>
         </div>
       </div>
