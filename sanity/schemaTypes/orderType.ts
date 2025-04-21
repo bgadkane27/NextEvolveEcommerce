@@ -23,8 +23,8 @@ export const orderType = defineType({
             ],
         },
         defineField({
-            name:'stripeCheckoutSessiodId',
-            title: 'Stripe Checkout Sessiod ID',
+            name: 'stripeCheckoutSessionId',
+            title: 'Stripe Checkout Session ID',
             type: 'string'
         }),
         defineField({
@@ -83,7 +83,7 @@ export const orderType = defineType({
                             quantity: 'quantity',
                             image: 'product.images',
                             price: 'product.price',
-                            currency: 'prodduct.currency'
+                            currency: 'product.currency'
                         },
                         prepare(select){
                             return{
@@ -95,6 +95,76 @@ export const orderType = defineType({
                     }
                 })
             ]
+        }),
+        defineField({
+            name: 'totalPrice',
+            title: 'Total price',
+            type: 'number',
+            validation: (Rule) => Rule.required().min(0),
+        }),
+        defineField({
+            name: 'currency',
+            title: 'Currency',
+            type: 'string',
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'amountDiscount',
+            title: 'Amount Discount',
+            type: 'number',
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'orderStatus',
+            title: 'Order Status',
+            type: 'string',
+            options: {
+                list: [
+                    {
+                        title: "Pending",
+                        value: 'pending'
+                    },
+                    {
+                        title: "Paid",
+                        value: 'paid'
+                    },
+                    {
+                        title: "Shipped",
+                        value: 'shipped'
+                    },
+                    {
+                        title: "Delivered",
+                        value: 'delivered'
+                    },
+                    {
+                        title: "Cancelled",
+                        value: 'cancelled'
+                    }
+                ]
+            }
+        }),
+        defineField({
+            name: 'orderDate',
+            title: "Order Date",
+            type: "datetime",
+            validation: (Rule) => Rule.required(),
         })
-    ]
+    ],
+    preview:{
+        select :{
+            name: 'customerName',
+            amount: 'totalPrice',
+            currency: 'currency',
+            orderId: 'orderNumber',
+            email: 'customerEmail'
+        },
+        prepare(select){
+            const orderIdSnippet = `${select.orderId.slice(0,5)}...${select.orderId.slice(-5)}`;
+            return{
+                title: `${select.name} (${orderIdSnippet})`,
+                subtitle: `${select.amount} ${select.currency}, ${select.email}`,
+                media: BasketIcon
+            }
+        }
+    }
 })
